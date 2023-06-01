@@ -89,7 +89,7 @@ class RegAcc:
             'password': self.matkhau,
         }
 
-        login = requests.post('https://metahome.digital/api/login', cookies=cookies2, headers=headers2, json=json_data2).json()
+        login = requests.post('https://metahome.digital/api/login', cookies=cookies2, headers=headers2, json=json_data2)
         self.email = login.get("email")
         if self.email is not None:
             self.accessToken = login["accessToken"]
